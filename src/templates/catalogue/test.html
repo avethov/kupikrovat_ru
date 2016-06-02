@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Тест</title>
+
+    <link href="{% static  "bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static  "font-awesome/font-awesome-4.6.2/css/font-awesome.css" %}" rel="stylesheet">
+    <style type="text/css">
+        .col-lg-3{
+            background-color: #4cae4c;
+        }
+        .fa-chevron-right{
+            right: 0;
+            position: absolute;
+            top: 50%;
+            margin-top: -14px;
+        }
+        .row-rel{
+            position: relative;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="row row-rel">
+                    <div class="col-lg-6">
+                        <span>Тест1</span>
+                    </div>
+                    <div class="col-lg-6">
+                        <span>Тест</span>
+                    </div>
+                    <a href="#">
+                        <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

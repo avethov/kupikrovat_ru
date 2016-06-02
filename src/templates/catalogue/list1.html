@@ -1,0 +1,16 @@
+﻿{% extends "catalogue/layout.html" %}
+
+{% block content %}
+
+{% if list %}
+<ul>
+    {% for l in list %}
+        <li><a href="{% url 'catalogue:detail' l.id %}">{{ l.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% endblock %}
+

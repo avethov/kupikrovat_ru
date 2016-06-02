@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Тест</title>
+
+        <link href="{% static  "bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static  "font-awesome/font-awesome-4.6.2/css/font-awesome.css" %}" rel="stylesheet">
+        <link href="{% static  "css/productbox.css" %}" rel="stylesheet">
+        <link href="{% static  "css/product-card.css" %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <img src="{% static  "images/test.jpg" %}" width="1152" height="229">
+        </div>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand visible-xs-block" href="#">Категории</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Акции<span class="sr-only">(current)</span></a></li>
+                                <li class="dropdown">
+                                    <a href="{% url 'catalogue:group'%}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Кровати <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Односпальные кровати</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Полутораспальные кровати</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Двуспальные кровати</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Кровати для дачи</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Кровати двухъярусные</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Кровати с подъемным механизмом</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Кровати с коваными элементами</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Матрацы <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Серия "Типо"</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Серия "Примо"</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Серия "Рикко"</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Серия "Уно"</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Наматрасники</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Комоды и тумбы <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Прикроватные тумбы</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Комоды</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Тумбы ТВ</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Обувницы</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Шкафы <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Книжные шкафы</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Шкафы гардеробные</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Антресоли</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Буфеты для кухни</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Шкафы для верхней одежды</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Распашные шкафы для одежды</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Столы и стулья <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Столы письменные</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Столы обеденные</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Столы для макияжа</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Журнальные столики</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Стулья</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Уголки кухонные</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Табуреты</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Контакты<span class="sr-only">(current)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+        {% block product_card %}
+        {% endblock %}
+
+        <div class="footer-container">
+            <footer class="footer">
+                <p>&copy; 2016 Тест</p>
+            </footer>
+        </div>
+        <script src="{% static "js/jquery-1.12.3.min.js" %}"></script>
+        <script src="{% static  "bootstrap/js/bootstrap.js" %}"></script>
+    </body>
+</html>

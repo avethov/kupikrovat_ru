@@ -1,0 +1,18 @@
+﻿{% extends "catalogue/layout.html" %}
+
+{% block detail %}
+{% if product %}
+    <h1>{{ product.name }}</h1>
+{% else %}
+    <p>No name.</p>
+{% endif %}
+{% if product_options %}
+<ul>
+    {% for option in product_options %}
+        <li>{{ option.name }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endblock %}

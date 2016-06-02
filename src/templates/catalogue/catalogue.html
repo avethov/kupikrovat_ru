@@ -1,0 +1,77 @@
+{% extends "catalogue/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container product-tiles-list">
+        {% if products %}
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 tile-wrapper">
+                        <div class="product-tile">
+                            <div class="row">
+                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 picture-wrapper">
+                                    <div class="product-tile-picture">
+                                        <a class="product-image-link" href="#" title="{{ product.name }}" itemprop="url">
+                                            <img class="img-responsive" src="{{ product.product_image.url }}" title="{{ product.name }}" itemprop="image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7 col-sm-12 col-md-12 col-lg-12 info-wrapper">
+                                        <div class="row row-rel">
+                                            <div class="col-xs-12 info-wrapper">
+                                                <div class="product-tile-info">
+                                                    <div class="product-tile-description">
+                                                        <h2 class="product-tile-title">
+                                                            <span class="title-wrapper">
+                                                                <a href="#" title="{{ product.name }}">{{ product.name }}</a>
+                                                            </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="product-tile-raiting">
+                                                        <div class="raiting-wrapper">
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <span class="product-raiting-current">
+                                                                (0)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-tile-price">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 price-wrapper">
+                                                            <div class="price-current-wrapper">
+                                                                <strong class="product-price-current pull-left">
+                                                                    {{ product.price }}
+                                                                    <span class="product-price-rub">
+                                                                        р.
+                                                                    </span>
+                                                                </strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
+                                                            <div class="basket-button-right">
+                                                                <a href="#" class="btn btn-danger btn-sm hidden-xs pull-right">
+                                                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="visible-xs-block" href="#" title="{{ product.name }}" itemprop="url">
+                                                    <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ product.name }}"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

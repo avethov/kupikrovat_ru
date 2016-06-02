@@ -1,0 +1,433 @@
+{% extends "catalogue/layout.html" %}
+{% load staticfiles %}
+
+{% block product_card %}
+        <div class="container product-data-wrapper">
+            <div class="row content-top-wrapper">
+                <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 content-top-primary-section">
+                    <h1 class="product-data-title nopadding">
+                        <strong>
+                            Это очень-очень-очень-чень-очень-очень длинное название товара №1
+                        </strong>
+                    </h1>
+                    <div class="row">
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 nopadding">
+                            <div class="product-data-raiting-wrapper">
+                                <i class="fa fa-star-o fa-lg"></i>
+                                <i class="fa fa-star-o fa-lg"></i>
+                                <i class="fa fa-star-o fa-lg"></i>
+                                <i class="fa fa-star-o fa-lg"></i>
+                                <i class="fa fa-star-o fa-lg"></i>
+                                <span class="product-data-raiting-current">
+                                    (0)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 nopadding">
+                            <p class="product-article nomargin">
+                                Артикул 0001
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-data-picture">
+                        <img class="img-responsive" src="{% static "images/mushroom_600x600.jpg" %}" title="Товар" itemprop="image" width="480" height="480">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 content-top-secondary-section">
+                    <div class="">
+                        <div class="row product-data-price-wrapper">
+                            <div class="col-sm-6 col-md-6 col-lg-6 nopadding">
+                                <strong class="product-data-price-label">
+                                    Цена (р.)
+                                </strong>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6 nopadding">
+                                <strong class="product-data-price-current">
+                                    11000
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="row product-data-option-wrapper">
+                            <div class="product-data-option-size">
+                                <strong class="col-xs-6 col-sm-6 col-md-6 col-lg-6 product-data-size-label nopadding">
+                                    Размер кровати
+                                </strong>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right nopadding">
+                                    <select name="product-sizes" class="form-control" title="Размер кровати">
+                                        <option value="bed-size-90">
+                                            90 см х 200 см
+                                        </option>
+                                        <option value="bed-size-120">
+                                            120 см х 200 см
+                                        </option>
+                                        <option value="bed-size-140">
+                                            140 см х 200 см
+                                        </option>
+                                        <option value="bed-size-160">
+                                            160 см х 200 см
+                                        </option>
+                                        <option value="bed-size-180">
+                                            180 см х 200 см
+                                        </option>
+                                        <option value="bed-size-200">
+                                            200 см х 200 см
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row product-data-option-wrapper">
+                            <div class="product-data-option-material">
+                                <strong class="col-xs-6 col-sm-6 col-md-6 col-lg-6 product-data-material-label nopadding">
+                                    Порода дерева
+                                </strong>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right nopadding">
+                                    <select name="product-material" class="form-control" title="Порода дерева">
+                                        <option value="bed-material-pine">Сосна</option>
+                                        <option value="bed-material-birch">
+                                            Берёза
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row product-data-option-wrapper">
+                            <div class="product-data-option-color">
+                                <strong class="col-xs-6 col-sm-6 col-md-6 col-lg-6 product-data-color-label nopadding">
+                                    Цвет
+                                </strong>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right nopadding">
+                                    <button type="button" class="btn-product-colors" data-toggle="modal" data-target="#product-data-colors-list">
+                                        <option>Лак</option>
+                                    </button>
+                                </div>
+                                <div class="modal fade" id="product-data-colors-list" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title">
+                                                    Выбор цвета
+                                                </h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                        <div class="product-data-picture">
+                                                            <img class="img-responsive" src="{% static "images/colors/33.jpg" %}" title="Лак" itemprop="image">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                        <div class="product-data-picture">
+                                                            <img class="img-responsive" src="{% static "images/colors/28.jpg" %}" title="Белый" itemprop="image">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                        <div class="product-data-picture">
+                                                            <img class="img-responsive" src="{% static "images/colors/26.jpg" %}" title="Слоновая кость" itemprop="image">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                        <div class="product-data-picture">
+                                                            <img class="img-responsive" src="{% static "images/colors/37.jpg" %}" title="Старый орех 1" itemprop="image">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                                        <div class="product-data-picture">
+                                                            <img class="img-responsive" src="{% static "images/colors/34.jpg" %}" title="Могано 1" itemprop="image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row buttons-block">
+                            <button type="button" class="btn btn-primary btn-product-add-basket">
+                                Добавить в корзину
+                            </button>
+                            <button type="button" class="btn btn-product-add-wish-list">
+                                В избранное
+                            </button>
+                        </div>
+                        <div class="row product-data-description">
+                            <p>Жесткий матрас на основе пружинного блока «Боннель» с настилом из кокосового волокна. Прослойка обеспечивает модели дополнительные ортопедические свойства и гигиеничность – в таком матрасе не заводится пылевой клещ. Состав матраса: пружинный блок «Боннель»; кокосовое волокно с одной стороны; чехол из хлопковой ткани, стеганой с синтепоном; Высота матраса: 18 см Жесткость матраса: 4 из 5 (умеренной жесткости)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 accessories-product-wrapper nopadding">
+                <h2 class="accessories-product-title">
+                    <span>
+                        Рекомендуемые товары
+                    </span>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 tile-wrapper">
+                    <div class="product-tile">
+                            <div class="row">
+                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 picture-wrapper">
+                                    <div class="product-tile-picture">
+                                        <a class="product-image-link" href="#" title="{{ product.name }}" itemprop="url">
+                                            <img class="img-responsive" src="{% static "images/mushroom1.jpg" %}" itemprop="image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7 col-sm-12 col-md-12 col-lg-12 info-wrapper">
+                                        <div class="row row-rel">
+                                            <div class="col-xs-12 info-wrapper">
+                                                <div class="product-tile-info">
+                                                    <div class="product-tile-description">
+                                                        <h2 class="product-tile-title">
+                                                            <span class="title-wrapper">
+                                                                <a href="#" title="{{ product.name }}">Рекомендованный товар</a>
+                                                            </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="product-tile-raiting">
+                                                        <div class="raiting-wrapper">
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <span class="product-raiting-current">
+                                                                (0)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-tile-price">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 price-wrapper">
+                                                            <div class="price-current-wrapper">
+                                                                <strong class="product-price-current pull-left">
+                                                                    500
+                                                                    <span class="product-price-rub">
+                                                                        р.
+                                                                    </span>
+                                                                </strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
+                                                            <div class="basket-button-right">
+                                                                <a href="#" class="btn btn-danger btn-sm hidden-xs pull-right">
+                                                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="visible-xs-block" href="#" title="{{ product.name }}" itemprop="url">
+                                                    <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ product.name }}"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 tile-wrapper">
+                    <div class="product-tile">
+                            <div class="row">
+                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 picture-wrapper">
+                                    <div class="product-tile-picture">
+                                        <a class="product-image-link" href="#" title="{{ product.name }}" itemprop="url">
+                                            <img class="img-responsive" src="{% static "images/mushroom1.jpg" %}" itemprop="image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7 col-sm-12 col-md-12 col-lg-12 info-wrapper">
+                                        <div class="row row-rel">
+                                            <div class="col-xs-12 info-wrapper">
+                                                <div class="product-tile-info">
+                                                    <div class="product-tile-description">
+                                                        <h2 class="product-tile-title">
+                                                            <span class="title-wrapper">
+                                                                <a href="#" title="{{ product.name }}">Рекомендованный товар</a>
+                                                            </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="product-tile-raiting">
+                                                        <div class="raiting-wrapper">
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <span class="product-raiting-current">
+                                                                (0)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-tile-price">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 price-wrapper">
+                                                            <div class="price-current-wrapper">
+                                                                <strong class="product-price-current pull-left">
+                                                                    500
+                                                                    <span class="product-price-rub">
+                                                                        р.
+                                                                    </span>
+                                                                </strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
+                                                            <div class="basket-button-right">
+                                                                <a href="#" class="btn btn-danger btn-sm hidden-xs pull-right">
+                                                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="visible-xs-block" href="#" title="{{ product.name }}" itemprop="url">
+                                                    <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ product.name }}"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 tile-wrapper">
+                    <div class="product-tile">
+                            <div class="row">
+                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 picture-wrapper">
+                                    <div class="product-tile-picture">
+                                        <a class="product-image-link" href="#" title="{{ product.name }}" itemprop="url">
+                                            <img class="img-responsive" src="{% static "images/mushroom1.jpg" %}" itemprop="image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7 col-sm-12 col-md-12 col-lg-12 info-wrapper">
+                                        <div class="row row-rel">
+                                            <div class="col-xs-12 info-wrapper">
+                                                <div class="product-tile-info">
+                                                    <div class="product-tile-description">
+                                                        <h2 class="product-tile-title">
+                                                            <span class="title-wrapper">
+                                                                <a href="#" title="{{ product.name }}">Рекомендованный товар</a>
+                                                            </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="product-tile-raiting">
+                                                        <div class="raiting-wrapper">
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <span class="product-raiting-current">
+                                                                (0)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-tile-price">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 price-wrapper">
+                                                            <div class="price-current-wrapper">
+                                                                <strong class="product-price-current pull-left">
+                                                                    500
+                                                                    <span class="product-price-rub">
+                                                                        р.
+                                                                    </span>
+                                                                </strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
+                                                            <div class="basket-button-right">
+                                                                <a href="#" class="btn btn-danger btn-sm hidden-xs pull-right">
+                                                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="visible-xs-block" href="#" title="{{ product.name }}" itemprop="url">
+                                                    <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ product.name }}"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 tile-wrapper">
+                    <div class="product-tile">
+                            <div class="row">
+                                <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 picture-wrapper">
+                                    <div class="product-tile-picture">
+                                        <a class="product-image-link" href="#" title="{{ product.name }}" itemprop="url">
+                                            <img class="img-responsive" src="{% static "images/mushroom1.jpg" %}" itemprop="image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-7 col-sm-12 col-md-12 col-lg-12 info-wrapper">
+                                        <div class="row row-rel">
+                                            <div class="col-xs-12 info-wrapper">
+                                                <div class="product-tile-info">
+                                                    <div class="product-tile-description">
+                                                        <h2 class="product-tile-title">
+                                                            <span class="title-wrapper">
+                                                                <a href="#" title="{{ product.name }}">Рекомендованный товар</a>
+                                                            </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="product-tile-raiting">
+                                                        <div class="raiting-wrapper">
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <i class="fa fa-star-o fa-mod-2e"></i>
+                                                            <span class="product-raiting-current">
+                                                                (0)
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-tile-price">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 price-wrapper">
+                                                            <div class="price-current-wrapper">
+                                                                <strong class="product-price-current pull-left">
+                                                                    500
+                                                                    <span class="product-price-rub">
+                                                                        р.
+                                                                    </span>
+                                                                </strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
+                                                            <div class="basket-button-right">
+                                                                <a href="#" class="btn btn-danger btn-sm hidden-xs pull-right">
+                                                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="visible-xs-block" href="#" title="{{ product.name }}" itemprop="url">
+                                                    <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ product.name }}"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
