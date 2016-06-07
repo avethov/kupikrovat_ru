@@ -1,11 +1,33 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest
 from django.template import RequestContext
 from datetime import datetime
 from django.template import loader
-from .models import ProductItem, ProductType, OptionGroup
+from .models import Product, Category, Option
 from django.core.paginator import EmptyPage, PageNotAnInteger
 from django.core.paginator import Paginator
+
+from django.http import HttpResponse, Http404, HttpRequest
+from django.views.decorators.http import require_GET
+from django.shortcuts import render, get_object_or_404
+
+
+@require_GET
+def goods_for_sale(request):
+    good_list = Product.objects.sale()
+    page = request.GET.get('page',
+                           1)
+
+    goods = Product.objects.pagination(good_list,
+                                       page)
+
+    context = {
+        'page': goods,
+        'goods': goods.object_list,
+    }
+
+    return render(request,
+                  'catalogue/sales.html',
+                  context
+                  )
 
 
 def ProductView(request):
@@ -76,7 +98,7 @@ def AkciiView(request):
     return HttpResponse(template.render(context, request))
 
 
-'''def index(request):
+def index(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
     return render(
@@ -87,7 +109,7 @@ def AkciiView(request):
             'title': 'Home Page',
             'year': datetime.now().year,
         })
-    )'''
+    )
 
 
 def product_detail(request, product_id):
@@ -99,4 +121,3 @@ def product_detail(request, product_id):
         'product_options': product_options,
     }
     return HttpResponse(template.render(context, request))
-

@@ -21,13 +21,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.autodiscover()
-
 urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
-                       url(r'^beds/', include('apps.catalogue.urls')),
-                       url(r'^$', 'apps.catalogue.views.index', name='index'),
-                       url(r'^akcii/', 'apps.catalogue.views.AkciiView', name='AkciiView'),
+                       url(r'^sales/', 'src.apps.catalogue.views.goods_for_sale', name='sales'),
+                       #url(r'^beds/', include('apps.catalogue.urls')),
+                       #url(r'^$', 'apps.catalogue.views.index', name='index'),
+                       #url(r'^akcii/', 'apps.catalogue.views.AkciiView', name='AkciiView'),
                        )
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

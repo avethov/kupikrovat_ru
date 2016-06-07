@@ -31,11 +31,11 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+    #'django.contrib.sites',
 ]
 
 LOCAL_APPS = [
-    'apps.catalogue',
+    'src.apps.catalogue',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
@@ -77,9 +77,17 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqlite3': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': normpath(join(SITE_ROOT, 'db', 'db.sqlite3')),
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kupikrovat_ru',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '!e6K@_$0aD'
     }
 }
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProductType, OptionGroup, OptionItem, ProductItem
+from .models import Product
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -16,7 +16,4 @@ class ProductAdmin(admin.ModelAdmin):
     make_published.short_description = u"Опубликовать выделенные товары"
     make_withdrawn.short_description = u"Изъять выделенные товары"
 
-admin.site.register(ProductType)
-admin.site.register(OptionGroup)
-admin.site.register(ProductItem, ProductAdmin)
-admin.site.register(OptionItem)
+admin.site.register(Product)
