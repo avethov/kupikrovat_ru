@@ -52,3 +52,4 @@ log/
 src/apps/catalogue/templatetags/__pycache__/
 src/kupikrovat_ru/__pycache__/
 # static/
+src/kupikrovat_ru/settings/local_settings.py

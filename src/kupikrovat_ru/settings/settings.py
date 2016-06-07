@@ -31,7 +31,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django.contrib.sites',
+    'django.contrib.sites',
 ]
 
 LOCAL_APPS = [
@@ -72,15 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
-    'sqlite3': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': normpath(join(SITE_ROOT, 'db', 'db.sqlite3')),
-    },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kupikrovat_ru',
@@ -144,3 +136,8 @@ MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
