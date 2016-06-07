@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.paginator import Page, Paginator, EmptyPage, PageNotAnInteger
+from os.path import join
 
 
 class ProductManager(models.Manager):
@@ -73,6 +74,9 @@ class Product(models.Model):
     price = models.IntegerField(u'Цена',
                                 default=0)
 
+    preview = models.OneToOneField(ProductImagePreview,
+                                   on_delete=models.CASCADE)
+
     is_saled = models.BooleanField(default=False)
 
     date_created = models.DateTimeField(
@@ -97,6 +101,11 @@ class Product(models.Model):
         verbose_name_plural = u'Товары'
 
 
+def content_file_name(instance,
+                      filename):
+    return join(['product', instance.Product.name, filename])
+
+
 class Category(models.Model):
     name = models.CharField(u'Название категории',
                             max_length=255
@@ -114,7 +123,7 @@ class Category(models.Model):
 
 
 class ProductImagePreview(models.Model):
-    preview = models.ImageField(upload_to='product')
+    preview = models.ImageField(upload_to=content_file_name)
 
     class Meta:
         verbose_name = "Preview image"
