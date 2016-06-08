@@ -10,9 +10,10 @@ from django.views.decorators.http import require_GET
 from django.shortcuts import render, get_object_or_404
 
 
+# Fuction Product.objects.added() must be changed to Product.objects.sale(). Used method is for testing
 @require_GET
-def goods_for_sale(request):
-    good_list = Product.objects.sale()
+def sale(request):
+    good_list = Product.objects.added()
     page = request.GET.get('page',
                            1)
 
@@ -26,6 +27,42 @@ def goods_for_sale(request):
 
     return render(request,
                   'catalogue/sales.html',
+                  context
+                  )
+
+
+@require_GET
+def beds(request):
+    good_list = Product.objects.published()
+    page = request.GET.get('page',
+                           1)
+
+    goods = Product.objects.pagination(good_list,
+                                       page)
+
+    context = {
+        'page': goods,
+        'goods': goods.object_list,
+    }
+
+    return render(request,
+                  'catalogue/sales.html',
+                  context
+                  )
+
+
+@require_GET
+def product_details(request,
+                    id):
+    product = get_object_or_404(Product,
+                                pk=id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request,
+                  'catalogue/product.html',
                   context
                   )
 
@@ -110,14 +147,3 @@ def index(request):
             'year': datetime.now().year,
         })
     )
-
-
-def product_detail(request, product_id):
-    product = ProductItem.objects.get(id=product_id)
-    product_options = OptionGroup.objects.filter(producttype__id=(ProductType.objects.filter(type__in=product_id)))
-    template = loader.get_template('catalogue/detail_old.html')
-    context = {
-        'product': product,
-        'product_options': product_options,
-    }
-    return HttpResponse(template.render(context, request))

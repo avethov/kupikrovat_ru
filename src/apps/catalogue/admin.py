@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product
+from .models import Product, Category, Option
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -17,3 +17,5 @@ class ProductAdmin(admin.ModelAdmin):
     make_withdrawn.short_description = u"Изъять выделенные товары"
 
 admin.site.register(Product)
+admin.site.register(Category)
+admin.site.register(Option)

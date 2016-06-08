@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-xs-5 col-sm-12 col-md-12 col-lg-12 picture-wrapper">
                     <div class="product-tile-picture">
-                        <a class="product-image-link" href="#" title="{{ good.name }}" itemprop="url">
-                            <img class="img-responsive" src="{{ product.product_image.url }}" title="{{ good.name }}" itemprop="image">
+                        <a class="product-image-link" href="{{ url }}" title="{{ name }}" itemprop="url">
+                            <img class="img-responsive" src="{{ image.url }}" title="{{ name }}" itemprop="image">
                         </a>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                                 <div class="product-tile-description">
                                     <h2 class="product-tile-title">
                                         <span class="title-wrapper">
-                                            <a href="#" title="{{ good.name }}">{{ good.name }}</a>
+                                            <a href="{{ url }}" title="{{ name }}">{{ name }}</a>
                                         </span>
                                     </h2>
                                 </div>
@@ -37,14 +37,21 @@
                             </div>
                             <div class="product-tile-price">
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 price-wrapper">
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 price-wrapper">
                                         <div class="price-current-wrapper">
                                             <strong class="product-price-current pull-left">
-                                                {{ good.price }}
+                                                {{ price }}
                                                 <span class="product-price-rub">
                                                     р.
                                                 </span>
                                             </strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
+                                        <div class="favorite-button-right">
+                                            <a href="#" class="btn btn-danger btn-sm hidden-xs pull-right">
+                                                <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs basket-wrapper">
@@ -56,8 +63,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="visible-xs-block" href="#" title="{{ good.name }}" itemprop="url">
-                                <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ good.name }}"></i>
+                            <a class="visible-xs-block" href="{{ url }}" title="{{ name }}" itemprop="url">
+                                <i class="fa fa-chevron-right fa-mod-lgx2 test" aria-hidden="true" title="{{ name }}"></i>
                             </a>
                         </div>
                     </div>

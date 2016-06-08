@@ -23,8 +23,9 @@ import src.apps.catalogue.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^sales/', src.apps.catalogue.views.goods_for_sale, name='sales'),
-
+    url(r'^sale/', src.apps.catalogue.views.sale, name='sales'),
+    url(r'^beds/', src.apps.catalogue.views.beds, name='beds'),
+    url(r'products/(?P<id>\d+)', src.apps.catalogue.views.product_details, name='details'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
