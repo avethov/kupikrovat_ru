@@ -4,4 +4,4 @@ log/
 src/apps/catalogue/migrations/
 src/kupikrovat_ru/settings/local_settings.py
 # static/
-# media/
+media/
