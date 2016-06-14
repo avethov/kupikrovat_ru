@@ -22,11 +22,15 @@
 }
 
 .product-title a:hover{
-    color: #FF0000;
+    color: #43695b;
 }
 
 .product-title a:focus{
-    color: #FF0000;
+    color: #43695b;
+}
+
+.info-wrapper {
+    margin-top: 10px;
 }
 
 .product-price {
@@ -95,11 +99,11 @@ img{
 }
 
 .product-tile-title a:hover{
-    color: #FF0000;
+    color: #43695b;
 }
 
 .product-tile-title a:focus{
-    color: #FF0000;
+    color: #43695b;
 }
 
 .product-tile-info {
@@ -186,4 +190,16 @@ img{
     position: absolute;
     top: 50%;
     margin-top: -14px;
+}
+
+.basket-button {
+    color: #fff;
+    background-color: #63887b;
+    border-color: #63887b;
+}
+
+.basket-button:hover {
+    color: #fff;
+    background-color: #43695b;
+    border-color: #43695b;
 }

@@ -23,7 +23,7 @@ import src.apps.catalogue.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^sale/', src.apps.catalogue.views.sale, name='sales'),
+    url(r'^sale/', src.apps.catalogue.views.sale, name='sale'),
     url(r'^beds/', src.apps.catalogue.views.beds, name='beds'),
     url(r'products/(?P<id>\d+)', src.apps.catalogue.views.product_details, name='details'),
     url(r'^$', src.apps.catalogue.views.home_page, name='home'),

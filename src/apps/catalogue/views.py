@@ -70,7 +70,7 @@ def product_details(request,
 @require_GET
 def home_page(request):
     return render(request,
-                  'navigation/base.html',
+                  'layout.html',
                   )
 
 

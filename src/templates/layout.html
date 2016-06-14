@@ -13,15 +13,19 @@
         <link href="{% static  "font-awesome/font-awesome-4.6.2/css/font-awesome.css" %}" rel="stylesheet">
         <link href="{% static  "css/productbox.css" %}" rel="stylesheet">
         <link href="{% static  "css/product-card.css" %}" rel="stylesheet">
+        <link href="{% static  "css/menu.css" %}" rel="stylesheet">
     </head>
 <body>
-    {% block navigation %}
-    
+    {% include  'navigation/base.html' %}
+
+    {% block goods-grid %}
+    {% endblock %}
+
+    {% block product_card %}
     {% endblock %}
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="{% static  "bootstrap/js/bootstrap.js" %}"></script>
-    <script src="{% static  "js/menu.js" %}"></script>
 </body>
 </html>
