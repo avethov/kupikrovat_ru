@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^sale/', src.apps.catalogue.views.sale, name='sales'),
     url(r'^beds/', src.apps.catalogue.views.beds, name='beds'),
     url(r'products/(?P<id>\d+)', src.apps.catalogue.views.product_details, name='details'),
+    url(r'^$', src.apps.catalogue.views.home_page, name='home'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -56,7 +56,9 @@ ROOT_URLCONF = '%s.urls' % SITE_NAME
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [normpath(join(DJANGO_ROOT, 'templates'))]
+        'DIRS': [
+            normpath(join(DJANGO_ROOT, 'templates'))
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

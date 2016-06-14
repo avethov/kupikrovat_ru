@@ -67,6 +67,13 @@ def product_details(request,
                   )
 
 
+@require_GET
+def home_page(request):
+    return render(request,
+                  'navigation/base.html',
+                  )
+
+
 def ProductView(request):
     products = ProductItem.objects.filter(product_type__name="Группа №1").filter(status="p").distinct()
     template = loader.get_template('catalogue/catalogue.html')

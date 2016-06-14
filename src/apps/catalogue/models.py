@@ -38,9 +38,9 @@ class ProductManager(models.Manager):
 
 
 class Option(models.Model):
-    name = models.CharField(u"Опция",
+    name = models.CharField(verbose_name=u"Опция",
                             max_length=255)
-    description = models.TextField(u'Описание',
+    description = models.TextField(verbose_name=u'Описание',
                                    blank=True)
 
     def __str__(self):
@@ -69,48 +69,48 @@ class OptionAttribute(models.Model):
         verbose_name = u'Аттрибут'
         verbose_name_plural = u'Аттрибуты'
 
-STATUS_CHOICES = (
-    ('d', u'Добавлен'),
-    ('p', u'Опубликован'),
-    ('w', u'Изъят'),
-)
-
 
 class Product(models.Model):
+    ADDED, PUBLISHED, WITHDRAWN = 'added', 'published', 'withdrawn'
+    STATUS_CHOICES = ((ADDED, u'Добавлен'),
+                      (PUBLISHED, u'Опубликован'),
+                      (WITHDRAWN, u'Изъят'),
+                      )
     name = models.CharField(u'Название товара',
                             max_length=255)
-    description = models.TextField(u"Описание товара",
-                                   blank=True)
+    description = models.TextField(verbose_name=u"Описание товара",
+                                   blank=True,
+                                   null=True)
     attribute = models.ManyToManyField(OptionAttribute,
                                        verbose_name=u'Параметры',
                                        blank=True)
     option = models.ManyToManyField(Option,
                                     verbose_name=u'Опция',
                                     blank=True)
-    price = models.IntegerField(u'Цена',
+    price = models.IntegerField(verbose_name=u'Цена',
                                 default=0)
 
-    preview = models.ImageField(u'Фотография',
+    preview = models.ImageField(verbose_name=u'Фотография',
                                 upload_to='product')
 
-    raiting = models.IntegerField(default=0,
-                                  verbose_name=u'Рейтинг')
+    raiting = models.IntegerField(verbose_name=u'Рейтинг',
+                                  default=0,
+                                  )
 
-    status = models.CharField(max_length=1,
+    status = models.CharField(verbose_name=u"Статус",
+                              max_length=9,
                               choices=STATUS_CHOICES,
-                              default="d",
-                              verbose_name=u"Статус")
+                              default=ADDED,
+                              )
 
-    date_created = models.DateTimeField(
-        u"Создан",
-        auto_now_add=True,
-        null=True
-        )
-    date_updated = models.DateTimeField(
-        u"Обновлен",
-        auto_now=True,
-        null=True
-        )
+    date_created = models.DateTimeField(verbose_name=u"Создан",
+                                        auto_now_add=True,
+                                        null=True
+                                        )
+    date_updated = models.DateTimeField(verbose_name=u"Обновлен",
+                                        auto_now=True,
+                                        null=True
+                                        )
 
     objects = ProductManager()
 
@@ -128,9 +128,31 @@ class Product(models.Model):
 
 
 class Category(models.Model):
+    STANDALONE, PARENT, CHILD = 'standalone', 'parent', 'child'
+    STRUCTURE_CHOICES = ((STANDALONE, u'Независимая'),
+                         (PARENT, u'Родительская'),
+                         (CHILD, u'Подкатегория'),
+                         )
+    structure = models.CharField(verbose_name=u'Тип категории',
+                                 max_length=10,
+                                 choices=STRUCTURE_CHOICES,
+                                 default=PARENT,
+                                 )
+    parent = models.ForeignKey('self',
+                               verbose_name=u'Родительская категория',
+                               blank=True,
+                               related_name='children',
+                               null=True
+                               )
     name = models.CharField(u'Название категории',
                             max_length=255
                             )
+    slug = models.SlugField(verbose_name=u'Метка',
+                            max_length=255,
+                            unique=True,
+                            null=True)
+    description = models.TextField(verbose_name=u'Описание',
+                                   blank=True)
     product = models.ManyToManyField(Product,
                                      verbose_name=u'Товар',
                                      blank=True)
@@ -141,3 +163,4 @@ class Category(models.Model):
     class Meta:
         verbose_name = u'Категория'
         verbose_name_plural = u'Категории'
+
