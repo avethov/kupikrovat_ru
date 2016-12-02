@@ -77,11 +77,11 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kupikrovat_ru',
-        'HOST': '127.0.0.1',
+        'NAME': 'bedsworld',
+        'HOST': 'eu-cdbr-azure-west-a.cloudapp.net',
         'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': '!e6K@_$0aD'
+        'USER': 'b4d4d504fea35c',
+        'PASSWORD': 'ddfce1ca'
     }
 }
 
